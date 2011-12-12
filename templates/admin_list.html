@@ -1,0 +1,43 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+    <!-- Content -->
+    <div id="content" class="flex">
+        <h1>Selecione {{ type }} para modificar</h1>
+        <div id="content-main">
+        <ul class="object-tools">
+            <li>
+              <a href="add/" class="addlink">Adicionar {{ type }}</a>
+            </li>
+        </ul>
+
+    <div class="module" id="changelist">
+        <div class="results">
+            <table cellspacing="0" id="result_list">
+                <thead>
+                    <tr>
+                        {% for header in headers %}
+                        <th scope="col">{{ header }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+            <tbody>
+                {% for object in object_list %}
+                <tr class="{{ cycle(['row1', 'row2'], loop.index0) }}">
+                    {% for header in headers %}
+                    <th><a href="{{ object.id }}/">{{ attribute(object, header) }}</a></th>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+
+        
+        <br class="clear" />
+    </div>
+    <!-- END Content -->
+
+{% endblock content %}

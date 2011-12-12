@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+<title>Tools Shop</title>
+<link rel="stylesheet" href="{{ media_url }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="{{ media_url }}css/blueprint/print.css" type="text/css" media="print">
+<!--[if lt IE 8]><link rel="stylesheet" href="{{ media_url }}css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+<link rel="stylesheet" type="text/css" href="{{ media_url }}css/style.css" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="{{ media_url }}css/iecss.css" />
+<![endif]-->
+<script type="text/javascript" src="{{ media_url }}js/jquery.min.js"></script>
+<script type="text/javascript" src="{{ media_url }}js/boxOver.js"></script>
+<script type="text/javascript" src="{{ media_url }}js/simpleCart.js"></script>
+<script type="text/javascript" src="{{ media_url }}js/process.js"></script>
+<script type="text/javascript">
+    simpleCart.email = "rflorianobr@gmail.com";
+</script>
+</head>
+<body>
+<div id="main_container">
+	<div id="header">
+       <div class="top_right">
+            <div class="big_banner">
+                <a href="#"><img src="{{ media_url }}images/banner728.jpg" alt="" title="" border="0" /></a>
+            </div>
+        </div>
+        <div id="logo">
+            <a href="{{ url_root }}"><img src="{{ media_url }}images/logo.png" alt="" title="" border="0" width="182" height="85" /></a>
+	    </div>
+    </div>
+
+    <div id="main_content">
+        {% include "menu.html" %}
+        <!-- {% include "breadcrump.html" %} -->
+        {% include "sidebar_categories.html" %}
+
+        <div class="center_content">
+            {% if message %}<div class="{{ message.type }}">{{ message.text }}</div>{% endif %}
+            {% block content %}{% endblock %}
+        </div><!-- end of center content -->
+
+        {% include "sitebar_right.html" %}
+   </div><!-- end of main content -->
+
+    <div class="footer">
+        {% include "footer.html" %}
+    </div>
+</div>
+<!-- end of main_container -->
+</body>
+</html>

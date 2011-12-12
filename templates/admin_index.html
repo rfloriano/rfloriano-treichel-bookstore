@@ -1,0 +1,68 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<div id="content" class="colMS">        
+        <h1>Administração do Site</h1>
+        <div id="content-main">
+            <div class="module">
+                <table summary="Modelos disponíveis na aplicação Auth">
+                <caption><a href="auth/" class="section">Autenticação</a></caption>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/user/">Usuários</a></th>
+                        <td><a href="{{ url_root }}admin/user/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/user/" class="changelink">Modificar</a></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="module">
+                <table summary="Modelos disponíveis na aplicação carrinho">
+                <caption><a href="auth/" class="section">Carrinho</a></caption>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/cart/">Carrinho</a></th>
+                        <td><a href="{{ url_root }}admin/cart/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/cart/" class="changelink">Modificar</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/item/">Itens</a></th>
+                        <td><a href="{{ url_root }}admin/item/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/item/" class="changelink">Modificar</a></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="module">
+                <table summary="Modelos disponíveis na aplicação livros">
+                <caption><a href="auth/" class="section">Livros</a></caption>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/author/">Autor</a></th>
+                        <td><a href="{{ url_root }}admin/author/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/author/" class="changelink">Modificar</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/categorie/">Categoria</a></th>
+                        <td><a href="{{ url_root }}admin/categorie/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/categorie/" class="changelink">Modificar</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/book/">Livro</a></th>
+                        <td><a href="{{ url_root }}admin/book/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/book/" class="changelink">Modificar</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/bookauthor/">Livro autor</a></th>
+                        <td><a href="{{ url_root }}admin/bookauthor/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/bookauthor/" class="changelink">Modificar</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><a href="{{ url_root }}admin/bookcategorie/">Livro categoria</a></th>
+                        <td><a href="{{ url_root }}admin/bookcategorie/add/" class="addlink">Adicionar</a></td>
+                        <td><a href="{{ url_root }}admin/bookcategorie/" class="changelink">Modificar</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <br class="clear" />
+    </div>
+{% endblock %}

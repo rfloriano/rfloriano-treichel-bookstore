@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block breadcrump %}Livros{% endblock %}
+
+{% block content %}
+
+    <div class="center_title_bar">Lista de livros</div>
+
+    {% for book in books %}
+        {% include "book_part.html" %}
+    {% endfor %}
+{% endblock content %}

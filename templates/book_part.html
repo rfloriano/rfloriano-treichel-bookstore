@@ -1,0 +1,16 @@
+<div class="prod_box">
+    <div class="center_prod_box">            
+        <div class="product_title"><a href="{{ book.get_absolute_url }}">{{ book.name }}</a></div>
+        <div class="product_img">
+            <a href="{{ book.get_absolute_url }}">
+                <img src="{{ media_url }}{{ book.cover }}" alt="{{ book.name }}" title="{{ book.name }}" border="0" width="94px" height="142px" />
+            </a>
+        </div>
+        <div class="prod_price"><span class="price">R$ {{ book.price }}</span></div>                        
+    </div>
+   
+    <div class="prod_details_tab">
+        <a href="javascript:;" class="prod_buy" onclick="simpleCart.add('name={{ book.name }}' , 'price={{ book.price }}' , 'quantity=1' , 'id={{ book.id}}');">Adicionar</a>          
+        <a href="{{ book.get_absolute_url }}" class="prod_details">Detalhes</a>
+    </div>                     
+</div>

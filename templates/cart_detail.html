@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="center_title_bar">Dados de entrega</div>
+    <table class="my-address table">
+        <caption>Suas informações de entrega</caption>
+        <tr>
+            <td class="label">Cidade:</td>
+            <td class="data">{{ cart.city }}</td>
+        </tr>
+        <tr>
+            <td class="label">Endereço:</td>
+            <td class="data">{{ cart.address }}</td>
+        </tr>
+        <tr>
+            <td class="label">CEP:</td>
+            <td class="data">{{ cart.cep }}</td>
+        </tr>
+        <tr>
+            <td class="label">Pago:</td>
+            <td class="data">{{ cart.is_paid }}</td>
+        </tr>
+        <tr>
+            <td class="label">Total:</td>
+            <td class="data">{{ cart.total }}</td>
+        </tr>
+    </table>
+    <div class="center_title_bar">Finalizar carrinho</div>
+    <div class="books">
+        {% for item in cart.items %}
+            {% include "book_part.html" with {'book': item.getBook} %}
+        {% endfor %}
+        <div class="clear"></div>
+    </div>
+    <a href="javascript:;" title="Finalizar compra" class="prod_buy simpleCart_checkout">Finalizar</a>
+{% endblock content %}

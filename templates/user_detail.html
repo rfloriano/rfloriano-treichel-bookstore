@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="center_title_bar">Meus dados</div>
+<div class="settings">
+    <form id="user-settings" action="{{ url_root }}admin/settings/" method="post" accept-charset="utf-8">
+        <p><label for="id_name">Nome:</label></p>
+        <p><input type="text" name="name" id="id_name" value="{{ user.name }}"></p>
+
+        <p><label for="id_name">Usuário:</label></p>
+        <p><span>{{ user.username }}</span></p>
+
+        <p><label for="id_password">Senha:</label></p>
+        <p><input type="password" name="password" id="id_password" value="{{ user.password }}"></p>
+        
+        <p><label for="id_city">Cidade:</label></p>
+        <p><input type="text" name="city" id="id_city" value="{{ user.city }}"></p>
+        
+        <p><label for="id_address">Endereço:</label></p>
+        <p><input type="text" name="address" id="id_address" value="{{ user.address }}"></p>
+        
+        <p><label for="id_cep">CEP:</label></p>
+        <p><input type="text" name="cep" id="id_cep" value="{{ user.cep }}"></p>
+
+        <input type="submit" value="Enviar">
+    </form>
+</div>
+
+<script type="text/javascript">
+    $('#user-settings').submit(function() {
+        var is_valid = validation("user-settings");
+        if (!is_valid){
+             alert("Você precisa preecher todos os campos antes de proceguir.")
+        }
+        return is_valid;
+    });
+</script>
+
+{% endblock content %}

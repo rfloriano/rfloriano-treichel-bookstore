@@ -1,0 +1,52 @@
+{% extends "admin_base.html" %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{{ media_url }}css/admin/forms.css" />
+
+<div class="breadcrumbs">
+<a href="../../">Início</a>
+›
+<a href="../">{{ type }}</a>
+›
+{% if creating %}
+Adicionando
+{% else %}
+{{ object.id }}
+{% endif %}
+</div>
+
+<!-- Content -->
+<div id="content" class="colM">
+    
+    <h1>Modificar {{ type }}</h1>
+    <div id="content-main">
+        <form enctype="multipart/form-data" action="" method="post">
+        <div>
+            <fieldset class="module aligned ">
+                <div class="form-row title">
+                    {% for header in headers %}
+                    {% if header != 'id' %}
+                        <div>
+                            <label for="id_{{ header|lower }}" class="required">{{ header }}:</label>
+                            <input name="{{ header|lower }}" value="{{ attribute(object, header) }}" class="vTextField" maxlength="150" type="text" id="id_{{ header|lower }}" />
+                        </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </fieldset>
+
+            <div class="submit-row" >
+                <input type="submit" value="Salvar" class="default" />
+                {% if not creating %}
+                <p class="deletelink-box">
+                    <a href="delete/" onclick="if (!confirm('Deseja excluir este {{ type }}?')){ return false; };" class="deletelink">Apagar</a>
+                </p>
+                {% endif %}
+            </div>
+        </div>
+        </form>
+    </div>
+    <br class="clear" />
+</div>
+<!-- END Content -->
+{% endblock content %}

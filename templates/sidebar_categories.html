@@ -1,0 +1,10 @@
+<div class="left_content">
+    {% if not cetegories_list is empty %}
+    <div class="title_box">Categorias</div>
+    <ul class="left_menu">
+        {% for categorie in cetegories_list %}
+            <li class="{{ cycle(['odd', 'even'], i) }}"><a href="{{ categorie.get_absolute_url }}">{{ categorie.name }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div><!-- end of left content --> 

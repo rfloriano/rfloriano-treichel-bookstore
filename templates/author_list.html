@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block breadcrump %}TEST{% endblock %}
+
+{% block content %}
+    <div class="center_title_bar">Lista de autores</div>
+
+    {% for author in authors %}
+        <div class="prod_box">
+            <div class="center_prod_box">            
+                <div class="product_title"><a href="{{ author.get_absolute_url }}">{{ author.name }}</a></div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br" >
+<head>
+<title>Administração do Site | Site bookstore</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" href="{{ media_url }}css/blueprint/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" type="text/css" href="{{ media_url }}css/admin/base.css" />
+<link rel="stylesheet" type="text/css" href="{{ media_url }}css/admin/dashboard.css" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="{{ media_url }}css/admin/ie.css" /><![endif]-->
+</head>
+
+<body class="dashboard">
+<!-- Container -->
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+            <h1 id="site-name">Administração do rfloriano & treichel bookstore</h1>
+        </div>
+        <div id="user-tools">
+            Bem vindo,
+            <strong>{{ session.user.name }}</strong>.  
+                    <a href="{{ url_root }}logout/">
+                Encerrar sessão</a>
+        </div>
+    </div>
+    <!-- END Header -->
+
+    <!-- Content -->
+    {% if message %}<div class="{{ message.type }}">{{ message.text }}</div>{% endif %}
+    {% block content %}{% endblock %}
+    <!-- END Content -->
+
+    <div id="footer"></div>
+</div>
+<!-- END Container -->
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="center_title_bar">Lista de livros por categoria - {{ categorie.name }}</div>
+
+    {% for book in categorie.books %}
+        {% include "book_part.html" %}
+    {% endfor %}
+{% endblock content %}

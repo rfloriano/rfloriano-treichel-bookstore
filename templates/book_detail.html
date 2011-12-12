@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% include "book_part.html" %}
+
+    <div class="book-detail">
+        <p>{{ book.name }}</p>
+        <p>Por
+            {% for author in book.authors %}
+                <a href="{{ author.get_absolute_url }}">{{ author.name }}</a>
+            {% endfor %}
+        </p>
+        <p>{{ book.edition }}</p>
+        <p>{{ book.description }}</p>
+        <p>Gêneros - 
+            {% for categorie in book.categories %}
+                <a href="{{ categorie.get_absolute_url }}">{{ categorie.name }}</a>
+            {% endfor %}
+        </p>
+        <p>{{ book.year }}</p>
+        <p>R$ {{ book.price }}</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+<div class="shopping_cart">
+    <div class="title_box">Carrinho</div>
+    <div class="cart_details">
+        <span class="simpleCart_quantity"></span> items<br />
+        <span class="border_cart"></span>
+        Total: <span class="price simpleCart_total"></span>
+    </div>
+    <div class="cart_icon">
+        <!-- <a href="javascript:;" title="" class="simpleCart_checkout"> -->
+        <a href="{{ url_root }}cart/finish/"
+            onclick="if (!simpleCart.hasItem()) { alert('Seu carrinho está vazio, você não pode prosseguir. Por favor, faça suas comprar e depois finalize.'); return false; }else{ return true;}
+            {% if not session.user %}alert('Você precisa estar logado para finalizar sua compra. Por favor, faça seu login.'); document.getElementById('id_login').focus(); return false;{% endif %} return true; ">
+            <img src="{{ media_url }}images/shoppingcart.png" alt="" title="" width="35" height="35" border="0" />
+        </a>
+    </div>
+    <a href="javascript:;" class="prod_details simpleCart_empty">Esvaziar</a>
+</div>
