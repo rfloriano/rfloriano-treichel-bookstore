@@ -19,8 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de Dados: `bookstore`
 --
-CREATE DATABASE `bookstore` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `bookstore`;
+-- CREATE DATABASE `bookstore` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `rfloriano_book`;
 
 -- --------------------------------------------------------
 

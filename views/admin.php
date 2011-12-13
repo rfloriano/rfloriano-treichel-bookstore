@@ -103,7 +103,7 @@ function admin_edit($object, $type, $id, $action){
     );
 }
 
-function user($id, $action){
+function user($id=NULL, $action=NULL){
     admin_required();
     $type = "usuários";
     $user = new User();
@@ -115,7 +115,7 @@ function user($id, $action){
     }
 }
 
-function cart($id, $action){
+function cart($id=NULL, $action=NULL){
     admin_required();
     $type = "carrinho";
     $cart = new Cart();
@@ -127,7 +127,7 @@ function cart($id, $action){
     }
 }
 
-function item($id, $action){
+function item($id=NULL, $action=NULL){
     admin_required();
     $type = "item";
     $item = new Item();
@@ -139,7 +139,7 @@ function item($id, $action){
     }
 }
 
-function author($id, $action){
+function author($id=NULL, $action=NULL){
     admin_required();
     $type = "autor";
     $author = new Author();
@@ -151,7 +151,7 @@ function author($id, $action){
     }
 }
 
-function categorie($id, $action){
+function categorie($id=NULL, $action=NULL){
     admin_required();
     $type = "categoria";
     $categorie = new Categorie();
@@ -163,7 +163,7 @@ function categorie($id, $action){
     }
 }
 
-function book($id, $action){
+function book($id=NULL, $action=NULL){
     admin_required();
     $type = "livro";
     $book = new Book();
@@ -175,7 +175,7 @@ function book($id, $action){
     }
 }
 
-function bookauthor($id, $action){
+function bookauthor($id=NULL, $action=NULL){
     admin_required();
     $type = "livro-autor";
     $bookauthor = new BookAuthor();
@@ -187,7 +187,7 @@ function bookauthor($id, $action){
     }
 }
 
-function bookcategorie($id, $action){
+function bookcategorie($id=NULL, $action=NULL){
     admin_required();
     $type = "livro-categoria";
     $bookcategorie = new BookCategorie();
